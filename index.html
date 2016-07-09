@@ -21,7 +21,7 @@
         <form class="text-center col-md-8 col-md-offset-2">
             <div class="form-group">
                 <div class="row text-center">
-                    <span class="help-block">Please select a rover:</span>
+                    <span class="help-block">First select a rover:</span>
                     <label class="radio-inline">
                         <input type="radio" name="inlineRadioOptions" id="curiosity" value="option1">Curiosity
                     </label>
@@ -33,13 +33,14 @@
                     </label>
                 </div>
                 <div class="row text-center">
-                    <span class="help-block">Please select a camera view:</span>
+                    <span class="help-block">Next select a camera view:</span>
                     <div class="dropdown col-md-4 col-md-offset-4">
                         <select class="form-control" id="camera-choices" disabled>
-                            
+                            <!--jQuery appends in the choices-->
                         </select>
                     </div>
                 </div>
+                <button type="submit" class="btn btn-primary">Get Pictures</button>
             </div>
         </form>
     </div>

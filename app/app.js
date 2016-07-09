@@ -5,6 +5,7 @@ $(document).ready(function() {
         $("#camera-choices").children().remove();
         $("#camera-choices").attr('disabled',false);
         $("#camera-choices").append(
+            "<option>" + "All Cameras" + "</option>" +
             "<option>" + "Front Hazard Avoidance Camera" + "</option>" +
             "<option>" + "Rear Hazard Avoidance Camera" + "</option>" +
             "<option>" + "Mast Camera" + "</option>" +
@@ -18,6 +19,7 @@ $(document).ready(function() {
     });
     function sharedCameras(){
         $("#camera-choices").append(
+            "<option>" + "All Cameras" + "</option>" +
             "<option>" + "Front Hazard Avoidance Camera" + "</option>" +
             "<option>" + "Rear Hazard Avoidance Camera" + "</option>" +
             "<option>" + "Navigation Camera" + "</option>" +
