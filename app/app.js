@@ -54,6 +54,7 @@ $(document).ready(function() {
         event.preventDefault();
         assignCameraChoice();
         getImages(roverChoice, cameraChoice);
+        displayImages();
     });
      
 
@@ -67,9 +68,16 @@ $(document).ready(function() {
             api_key: 'I4dfNHxd1LPVg6P96qNQlu9cJNz50UNBIAyR2LXO'
         };
         $.ajax({
-            url: 'https://api.nasa.gov/mars-photos/api/v1/rovers/' + roverChoice + '/photos?earth_date=none&camera=' + cameraChoice + '&api_key=' + params.api_key
+            url: 'https://api.nasa.gov/mars-photos/api/v1/rovers/' + roverChoice + '/photos?earth_date=2015-12-3&camera=' + cameraChoice + '&api_key=' + params.api_key
+        }).done(function(results) {
+            $.each(results.photos);
+            displayImages(photos);//this is where I've left off....get this working
         });
         
+    }
+
+    function displayImages() {
+
     }
 
 
