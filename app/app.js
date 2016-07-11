@@ -52,6 +52,7 @@ $(document).ready(function() {
 
     $("#picGetterForm").submit(function(event) {
         event.preventDefault();
+        $("#pic-results").children().remove();
         assignCameraChoice();
         getImages(roverChoice, cameraChoice);
         //displayImages();
@@ -72,7 +73,11 @@ $(document).ready(function() {
         }).done(function(results) {
             $.each(results.photos, function(i, photos) {
                 console.log(photos.img_src);
-                displayImages(photos);
+                
+                $("#pic-results").append(
+                "<img src=" + photos.img_src + ">"
+                );
+                //displayImages(photos.img_src);
             });
         });
         
@@ -83,7 +88,7 @@ $(document).ready(function() {
     function displayImages(photos) {
         $("#pic-results").children().remove();
         $("#pic-results").append(
-            "<img src=" + photos.img_src + ">"
+            "<img src=" + photos + ">"
         );
     }
 
