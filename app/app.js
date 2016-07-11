@@ -54,7 +54,7 @@ $(document).ready(function() {
         event.preventDefault();
         assignCameraChoice();
         getImages(roverChoice, cameraChoice);
-        displayImages();
+        //displayImages();
     });
      
 
@@ -70,14 +70,21 @@ $(document).ready(function() {
         $.ajax({
             url: 'https://api.nasa.gov/mars-photos/api/v1/rovers/' + roverChoice + '/photos?earth_date=2015-12-3&camera=' + cameraChoice + '&api_key=' + params.api_key
         }).done(function(results) {
-            $.each(results.photos);
-            displayImages(photos);//this is where I've left off....get this working
+            $.each(results.photos, function(i, photos) {
+                console.log(photos.img_src);
+                displayImages(photos);
+            });
         });
         
     }
-
-    function displayImages() {
-
+    function findImages(picobjects) {
+        var picResults = picResults.find(picobjects.img_src)
+    }
+    function displayImages(photos) {
+        $("#pic-results").children().remove();
+        $("#pic-results").append(
+            "<img src=" + photos.img_src + ">"
+        );
     }
 
 
