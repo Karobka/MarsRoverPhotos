@@ -78,8 +78,10 @@ $(document).ready(function() {
                 );
             });
         }).fail(function(jqXHR, errors){
-            $("#pic-results").append(
-                "<p class='col-md-3 col-md-offset-4'>" + errors + "</p>"  //error if endpoint returns {"errors":"No Photos Found"}
+            $(".feedback").append(
+                "<div class='alert alert-warning col-md-2' role='alert'>" +
+                "<p>" + errors + "</p>" +
+                "</div"  //error if endpoint returns {"errors":"No Photos Found"}
                 );
         });
         
