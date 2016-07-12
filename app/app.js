@@ -63,22 +63,24 @@ $(document).ready(function() {
     function getImages(roverChoice, cameraChoice) {
         var params = {
             rover: roverChoice,
-            earth_date: 'none',
+            sol: null,
             camera: cameraChoice,
-            page: 1,
+            page: 1,  //how do I get multiple pages of results?
             api_key: 'I4dfNHxd1LPVg6P96qNQlu9cJNz50UNBIAyR2LXO'
         };
         $.ajax({
-            url: 'https://api.nasa.gov/mars-photos/api/v1/rovers/' + roverChoice + '/photos?earth_date=2015-12-3&camera=' + cameraChoice + '&api_key=' + params.api_key
+            url: 'https://api.nasa.gov/mars-photos/api/v1/rovers/' + roverChoice + '/photos?sol=' + null + '&camera=' + cameraChoice + '&api_key=' + params.api_key
         }).done(function(results) {
             $.each(results.photos, function(i, photos) {
                 console.log(photos.img_src);
-                
                 $("#pic-results").append(
                 "<img src=" + photos.img_src + ">"
                 );
-                //displayImages(photos.img_src);
             });
+        }).fail(function(jqXHR, errors){
+            $("#pic-results").append(
+                "<p class='col-md-3 col-md-offset-4'>" + errors + "</p>"  //error if endpoint returns {"errors":"No Photos Found"}
+                );
         });
         
     }
@@ -91,6 +93,8 @@ $(document).ready(function() {
             "<img src=" + photos + ">"
         );
     }
+
+
 
 
 
