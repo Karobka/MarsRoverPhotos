@@ -1,11 +1,14 @@
 "use strict";
 var roverChoice;
 var cameraChoice;
+var usersolarDay;
+var maxsolarDay;
 $(document).ready(function() {
 
     //event listener for curiosity radio button
     $("#curiosity").click(function() {
         assignRoverChoice();
+        getMaxsol(roverChoice);
         $("#camera-choices").children().remove();
         $("#camera-choices, #solar-day").attr('disabled',false);
         $("#camera-choices").append(
@@ -35,6 +38,7 @@ $(document).ready(function() {
     //event listener for clicking opportunity and spirit radio buttons
     $("#opportunity, #spirit").click(function() {
         assignRoverChoice();
+        getMaxsol(roverChoice);
         $("#camera-choices").children().remove();
         $("#camera-choices, #solar-day").attr('disabled', false);
         sharedCameras();  
@@ -48,6 +52,29 @@ $(document).ready(function() {
     //update cameraChoice with current selection
     function assignCameraChoice() {
         cameraChoice = $("#camera-choices").val();
+    }
+
+    //update usersolarDay with input
+    function updateusersolarDay() {
+        usersolarDay = $(".solar-day").val();
+    }
+
+    
+    
+
+    //function to get max_sol value for selected rover
+    function getMaxsol (roverChoice) {
+        var maxparams = {
+            rover: roverChoice,
+            api_key: 'I4dfNHxd1LPVg6P96qNQlu9cJNz50UNBIAyR2LXO'
+        };
+        $.ajax({
+            url: 'https://api.nasa.gov/mars-photos/api/v1/rovers/' + roverChoice + '/photos?sol=1&api_key=' + maxparams.api_key
+        }).done(function(dateresults) {
+            //update maxsolarDay with endpoint value
+            maxsolarDay = dateresults.photos[0].rover.max_sol;
+            console.log(maxsolarDay);
+        })
     }
 
     $("#picGetterForm").submit(function(event) {
