@@ -9,7 +9,6 @@ $(document).ready(function() {
     $("#curiosity").click(function() {
         assignRoverChoice();
         getMaxsol(roverChoice);
-        updatePlaceholder(maxsolarDay);
         $("#camera-choices").children().remove();
         $("#camera-choices, #solar-day").attr('disabled',false);
         $("#camera-choices").append(
@@ -40,10 +39,9 @@ $(document).ready(function() {
     $("#opportunity, #spirit").click(function() {
         assignRoverChoice();
         getMaxsol(roverChoice);
-        updatePlaceholder(maxsolarDay);
         $("#camera-choices").children().remove();
         $("#camera-choices, #solar-day").attr('disabled', false);
-        sharedCameras();  
+        sharedCameras();
     });
     
     //update roverChoice with current selection
@@ -78,6 +76,7 @@ $(document).ready(function() {
             //update maxsolarDay with endpoint value
             maxsolarDay = dateresults.photos[0].rover.max_sol;
             console.log(maxsolarDay);
+            updatePlaceholder(maxsolarDay);
         });
     }
 
