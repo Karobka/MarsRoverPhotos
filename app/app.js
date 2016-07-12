@@ -3,6 +3,8 @@ var roverChoice;
 var cameraChoice;
 var usersolarDay;
 var maxsolarDay;
+var landedDate;
+var totalPics;
 $(document).ready(function() {
 
     //event listener for curiosity radio button
@@ -10,7 +12,7 @@ $(document).ready(function() {
         assignRoverChoice();
         getMaxsol(roverChoice);
         $("#camera-choices").children().remove();
-        $("#camera-choices, #solar-day").attr('disabled',false);
+        $("#camera-choices").attr('disabled',false);
         $("#camera-choices").append(
             "<option value='all'>" + "All Cameras" + "</option>" +
             "<option value='fhaz'>" + "Front Hazard Avoidance Camera" + "</option>" +
@@ -40,9 +42,17 @@ $(document).ready(function() {
         assignRoverChoice();
         getMaxsol(roverChoice);
         $("#camera-choices").children().remove();
-        $("#camera-choices, #solar-day").attr('disabled', false);
+        $("#camera-choices").attr('disabled', false);
         sharedCameras();
     });
+
+    //remove existing info then add info to rover-info div
+    function updateRoverinfo(){
+        $(".rover-info").children().remove();
+        $(".rover-info").append(
+        "<p class='bg-info'>This rover landed on " + landedDate + " and has taken " + totalPics + " photos since then!</p>"
+        )
+    } 
     
     //update roverChoice with current selection
     function assignRoverChoice() {
@@ -61,7 +71,10 @@ $(document).ready(function() {
 
     //update placeholder text with max solar day value of selected rover
     function updatePlaceholder(maxsolarDay) {
-        $(".solar-day").attr('placeholder', 'Enter number from 0 to ' + maxsolarDay);
+        $(".solar-day").attr({
+            placeholder: 'Enter number from 0 to ' + maxsolarDay,
+            disabled: false
+        });
     }
 
     //function to get max_sol value from endpoint for selected rover
@@ -73,10 +86,15 @@ $(document).ready(function() {
         $.ajax({
             url: 'https://api.nasa.gov/mars-photos/api/v1/rovers/' + roverChoice + '/photos?sol=1&api_key=' + maxparams.api_key
         }).done(function(dateresults) {
-            //update maxsolarDay with endpoint value
+            //update maxsolarDay/landedDate/totalPics with endpoint values
             maxsolarDay = dateresults.photos[0].rover.max_sol;
+            landedDate = dateresults.photos[0].rover.landing_date;
+            totalPics= dateresults.photos[0].rover.total_photos;
             console.log(maxsolarDay);
+            console.log(landedDate);
+            console.log(totalPics);
             updatePlaceholder(maxsolarDay);
+            updateRoverinfo();
         });
     }
 
