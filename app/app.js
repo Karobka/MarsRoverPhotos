@@ -52,6 +52,7 @@ $(document).ready(function() {
 
     $("#picGetterForm").submit(function(event) {
         event.preventDefault();
+        $(".feedback").children().remove();
         $("#pic-results").children().remove();
         assignCameraChoice();
         getImages(roverChoice, cameraChoice);
@@ -78,8 +79,9 @@ $(document).ready(function() {
                 );
             });
         }).fail(function(jqXHR, errors){
+            $(".feedback").children().remove();
             $(".feedback").append(
-                "<div class='alert alert-warning col-md-2' role='alert'>" +
+                "<div class='alert alert-warning col-md-2 col-md-offset-2' role='alert'>" +
                 "<p>" + errors + "</p>" +
                 "</div"  //error if endpoint returns {"errors":"No Photos Found"}
                 );
