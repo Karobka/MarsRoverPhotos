@@ -52,7 +52,15 @@ $(document).ready(function() {
         $(".rover-info").append(
         "<p class='bg-info'>This rover landed on " + landedDate + " and has taken " + totalPics + " photos since then!</p>"
         )
-    } 
+    }
+
+    //append error message
+    function errorMessage(errors) {
+        $(".error-message").children().remove();
+        $(".error-message").append(
+            "<p class='bg-warning'>" + errors + "</p>"
+        );
+    }
     
     //update roverChoice with current selection
     function assignRoverChoice() {
@@ -90,9 +98,6 @@ $(document).ready(function() {
             maxsolarDay = dateresults.photos[0].rover.max_sol;
             landedDate = dateresults.photos[0].rover.landing_date;
             totalPics= dateresults.photos[0].rover.total_photos;
-            console.log(maxsolarDay);
-            console.log(landedDate);
-            console.log(totalPics);
             updatePlaceholder(maxsolarDay);
             updateRoverinfo();
         });
@@ -108,7 +113,7 @@ $(document).ready(function() {
     });
      
 
-
+    //get images
     function getImages(roverChoice, cameraChoice) {
         var params = {
             rover: roverChoice,
@@ -127,12 +132,7 @@ $(document).ready(function() {
                 );
             });
         }).fail(function(jqXHR, errors){
-            $(".feedback").children().remove();
-            $(".feedback").append(
-                "<div class='alert alert-warning col-md-2 col-md-offset-2' role='alert'>" +
-                "<p>" + errors + "</p>" +
-                "</div"  //error if endpoint returns {"errors":"No Photos Found"}
-                );
+            errorMessage(errors);
         });
         
     }
