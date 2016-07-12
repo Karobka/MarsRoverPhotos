@@ -7,7 +7,7 @@ $(document).ready(function() {
     $("#curiosity").click(function() {
         assignRoverChoice();
         $("#camera-choices").children().remove();
-        $("#camera-choices").attr('disabled',false);
+        $("#camera-choices, #solar-day").attr('disabled',false);
         $("#camera-choices").append(
             "<option value='all'>" + "All Cameras" + "</option>" +
             "<option value='fhaz'>" + "Front Hazard Avoidance Camera" + "</option>" +
@@ -36,7 +36,7 @@ $(document).ready(function() {
     $("#opportunity, #spirit").click(function() {
         assignRoverChoice();
         $("#camera-choices").children().remove();
-        $("#camera-choices").attr('disabled', false);
+        $("#camera-choices, #solar-day").attr('disabled', false);
         sharedCameras();  
     });
     
