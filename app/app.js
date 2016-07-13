@@ -11,11 +11,7 @@ $(document).ready(function() {
 
     //event listener for curiosity radio button
     $("#curiosity").click(function() {
-        assignRoverChoice();
-        getMaxsol(roverChoice);
-        $(".camera-choices").children().remove();
-        $(".submitbtn").attr('disabled', false);
-        $(".camera-choices").attr('disabled',false);
+        sharedMethods();
         $(".camera-choices").append(
             "<option value='all'>" + "All Cameras" + "</option>" +
             "<option value='fhaz'>" + "Front Hazard Avoidance Camera" + "</option>" +
@@ -29,8 +25,23 @@ $(document).ready(function() {
             "<option value='minites'>" + "Miniature Thermal Emission Spectrometer" + "</option>"
         )
     });
+    
+    //event listener for clicking opportunity and spirit radio buttons
+    $("#opportunity, #spirit").click(function() {
+        sharedMethods();
+        sharedCameras();
+    });
 
-    //Adding cameras shared by both opportunity and spirit to drop-down choices
+    //function that has all shared functions&methods for the rovers
+    function sharedMethods(){
+        assignRoverChoice();
+        getMaxsol(roverChoice);
+        $(".camera-choices").children().remove();
+        $(".submitbtn").attr('disabled', false);
+        $(".camera-choices").attr('disabled', false);
+    }
+
+    //function that adds cameras shared by both Opportunity and Spirit to drop-down choices
     function sharedCameras(){
         $(".camera-choices").append(
             "<option value='all'>" + "All Cameras" + "</option>" +
@@ -41,15 +52,6 @@ $(document).ready(function() {
             "<option value='minites'>" + "Miniature Thermal Emission Spectrometer" + "</option>"
         )
     };
-    //event listener for clicking opportunity and spirit radio buttons
-    $("#opportunity, #spirit").click(function() {
-        assignRoverChoice();
-        getMaxsol(roverChoice);
-        $(".camera-choices").children().remove();
-        $(".submitbtn").attr('disabled', false);
-        $(".camera-choices").attr('disabled', false);
-        sharedCameras();
-    });
 
     //remove existing info then add info to rover-info div
     function updateRoverinfo(){
@@ -160,21 +162,5 @@ $(document).ready(function() {
                 console.log(error);
             });
         }
-        
-        
     }
-    function findImages(picobjects) {
-        var picResults = picResults.find(picobjects.img_src)
-    }
-    function displayImages(photos) {
-        $("#pic-results").children().remove();
-        $("#pic-results").append(
-            "<img src=" + photos + ">"
-        );
-    }
-
-
-
-
-
 });
