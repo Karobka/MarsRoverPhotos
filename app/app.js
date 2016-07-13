@@ -126,19 +126,36 @@ $(document).ready(function() {
             page: 1,  //how do I get multiple pages of results?
             api_key: 'I4dfNHxd1LPVg6P96qNQlu9cJNz50UNBIAyR2LXO'
         };
-        $.ajax({
-            url: 'https://api.nasa.gov/mars-photos/api/v1/rovers/' + roverChoice + '/photos?sol=' + solDay + '&camera=' + cameraChoice + '&api_key=' + params.api_key
-        }).done(function(results) {
-            $.each(results.photos, function(i, photos) {
-                console.log(photos.img_src);
-                $("#pic-results").append(
-                "<img src=" + photos.img_src + ">"
-                );
+        if (cameraChoice == "all"){
+            $.ajax({
+                url: 'https://api.nasa.gov/mars-photos/api/v1/rovers/' + roverChoice + '/photos?sol=' + solDay + '&api_key=' + params.api_key
+            }).done(function(results) {
+                $.each(results.photos, function(i, photos) {
+                    console.log(photos.img_src);
+                    $("#pic-results").append(
+                    "<img src=" + photos.img_src + ">"
+                    );
             });
-        }).fail(function(error){
-            errorMessage(error.responseJSON.errors);
-            console.log(error);
-        });
+            }).fail(function(error){
+                errorMessage(error.responseJSON.errors);
+                console.log(error);
+            });
+        }else {
+            $.ajax({
+            url: 'https://api.nasa.gov/mars-photos/api/v1/rovers/' + roverChoice + '/photos?sol=' + solDay + '&camera=' + cameraChoice + '&api_key=' + params.api_key
+            }).done(function(results) {
+                $.each(results.photos, function(i, photos) {
+                    console.log(photos.img_src);
+                    $("#pic-results").append(
+                    "<img src=" + photos.img_src + ">"
+                    );
+            });
+            }).fail(function(error){
+                errorMessage(error.responseJSON.errors);
+                console.log(error);
+            });
+        }
+        
         
     }
     function findImages(picobjects) {
