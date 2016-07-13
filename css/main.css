@@ -2,3 +2,8 @@
     height:55px;
 }
 
+.thumbnail {
+    height: 256px;
+    width: 256px;
+}
+

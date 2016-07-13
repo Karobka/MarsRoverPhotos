@@ -126,6 +126,7 @@ $(document).ready(function() {
             page: 1,  //how do I get multiple pages of results?
             api_key: 'I4dfNHxd1LPVg6P96qNQlu9cJNz50UNBIAyR2LXO'
         };
+        //if statement to remove camera choice from url if 'all' cameras is selected
         if (cameraChoice == "all"){
             $.ajax({
                 url: 'https://api.nasa.gov/mars-photos/api/v1/rovers/' + roverChoice + '/photos?sol=' + solDay + '&api_key=' + params.api_key
@@ -133,7 +134,9 @@ $(document).ready(function() {
                 $.each(results.photos, function(i, photos) {
                     console.log(photos.img_src);
                     $("#pic-results").append(
-                    "<img src=" + photos.img_src + ">"
+                    "<a href=" + '"' + photos.img_src + '"' + 'data-lightbox=' + roverChoice + ">" +
+                        "<img class='thumbnail' src=" + photos.img_src + ">" +
+                    "</a>"
                     );
             });
             }).fail(function(error){
