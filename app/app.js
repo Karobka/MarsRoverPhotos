@@ -14,6 +14,7 @@ $(document).ready(function() {
         assignRoverChoice();
         getMaxsol(roverChoice);
         $(".camera-choices").children().remove();
+        $(".submitbtn").attr('disabled', false);
         $(".camera-choices").attr('disabled',false);
         $(".camera-choices").append(
             "<option value='all'>" + "All Cameras" + "</option>" +
@@ -28,6 +29,7 @@ $(document).ready(function() {
             "<option value='minites'>" + "Miniature Thermal Emission Spectrometer" + "</option>"
         )
     });
+
     //Adding cameras shared by both opportunity and spirit to drop-down choices
     function sharedCameras(){
         $(".camera-choices").append(
@@ -44,6 +46,7 @@ $(document).ready(function() {
         assignRoverChoice();
         getMaxsol(roverChoice);
         $(".camera-choices").children().remove();
+        $(".submitbtn").attr('disabled', false);
         $(".camera-choices").attr('disabled', false);
         sharedCameras();
     });
