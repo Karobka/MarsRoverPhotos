@@ -135,7 +135,7 @@ $(document).ready(function() {
                     console.log(photos.img_src);
                     $("#pic-results").append(
                     "<a href=" + '"' + photos.img_src + '"' + 'data-lightbox=' + roverChoice + ">" +
-                        "<img class='thumbnail' src=" + photos.img_src + ">" +
+                        "<img class='thumbnail col-md-2' src=" + photos.img_src + ">" +
                     "</a>"
                     );
             });
@@ -150,7 +150,9 @@ $(document).ready(function() {
                 $.each(results.photos, function(i, photos) {
                     console.log(photos.img_src);
                     $("#pic-results").append(
-                    "<img src=" + photos.img_src + ">"
+                    "<a href=" + '"' + photos.img_src + '"' + "data-lightbox=" + roverChoice + ">" +
+                        "<img class='thumbnail col-md-2' src=" + photos.img_src + ">" +
+                    "</a>"
                     );
             });
             }).fail(function(error){
