@@ -10,7 +10,7 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <title>Pics From Mars</title>
+    <title>A Martian Landscape</title>
 </head>
 <body>
 <div id="container">
@@ -45,11 +45,12 @@
                             <select class="form-control camera-choices" disabled>
                                 <!--jQuery appends in the choices-->
                             </select>
+                            <span class="help-block">Tip: Select "All Cameras" to get the best results</span>
                     </div>
                     <div class="col-md-4 col-md-offset-2">
                             <label class="help-block">Enter a Martian Solar Day:</label>
-                            <input class="form-control solar-day" type="number" min="0" step="1" placeholder="Enter number 0 to 1000" disabled></input>
-                            <span class="help-block">(Tip: 0 was the day it landed on Mars)</span>
+                            <input class="form-control solar-day" type="number" min="0" step="1" placeholder="" required disabled></input>
+                            <span class="help-block">Tip: 0 (zero) was the day it landed on Mars but it hasn't taken pictures everyday so keep trying other days if you get no results</span>
                     </div>
                     <div class="rover-info col-md-8 col-md-offset-2">
                         <!-- append info here -->
@@ -61,14 +62,11 @@
             </div>
             <button type="submit" class="btn btn-primary submitbtn" value="Submit" disabled>Get Pictures</button>
         </form>
-        &nbsp;
-        
-        &nbsp;
     </div>
-    <div class="row">
-        <div class="text-center col-md-10 col-md-offset-2" id="pic-results">
+    <div class="row row-centered" id="pic-results">
+        
         <!--pics go here-->
-        </div>
+       
     </div>
 
 

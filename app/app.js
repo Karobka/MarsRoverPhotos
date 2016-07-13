@@ -137,7 +137,7 @@ $(document).ready(function() {
                     console.log(photos.img_src);
                     $("#pic-results").append(
                     "<a href=" + '"' + photos.img_src + '"' + 'data-lightbox=' + roverChoice + ">" +
-                        "<img class='thumbnail col-md-2' src=" + photos.img_src + ">" +
+                        "<img class='thumbnail col-xs-3 col-centered' src=" + photos.img_src + ">" +
                     "</a>"
                     );
             });
@@ -153,7 +153,7 @@ $(document).ready(function() {
                     console.log(photos.img_src);
                     $("#pic-results").append(
                     "<a href=" + '"' + photos.img_src + '"' + "data-lightbox=" + roverChoice + ">" +
-                        "<img class='thumbnail col-md-2' src=" + photos.img_src + ">" +
+                        "<img class='thumbnail col-xs-3 col-centered' src=" + photos.img_src + ">" +
                     "</a>"
                     );
             });

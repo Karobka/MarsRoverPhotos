@@ -1,15 +1,27 @@
 .feedback {
     height:55px;
 }
-
 .thumbnail {
     height: 256px;
     width: 256px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
-
 .jumbotron {
     background-image: url("../images/OpportunityMars.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
+.row-centered {
+    text-align: center;
+}
+.col-centered {
+    display: inline-block;
+    float: none;
+}
 
+#pic-results {
+    border-top: 1px solid #ccc;
+    margin-top: 25px;
+    padding-top: 25px;
+}
