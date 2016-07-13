@@ -116,6 +116,7 @@ $(document).ready(function() {
         $(".feedback").children().remove();
         $("#pic-results").children().remove();
         getImages(roverChoice, solDay, cameraChoice);
+        $(".photo-info").remove();
     });
      
 

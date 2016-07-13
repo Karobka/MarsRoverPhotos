@@ -16,8 +16,31 @@
 <div id="container">
     <div class="jumbotron text-center">
         <h1 class="display-3">A Martian Landscape</h1>
-        <p class="lead">Pictures from the NASA Mars Rovers</p>
-    </div>  <!-- add some NASA logos -->
+        <h2 class="lead">Pictures from the NASA Mars Rovers</h2>
+        <!-- Modal -->
+        <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">About this site</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>This was a project to practice working with an API.</p>
+                        <p>NASA has several API's you should <a href="https://api.nasa.gov/index.html">look at here.</a></p>
+                        <p>Created by Tim Wright.</p>
+                        <p><a href="mailto:mithgirw@gmail.com">Email me here.</a></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+
+    <!-- NASA logos -->
     <div class="row">
         <form class="text-center col-md-8 col-md-offset-2" id="picGetterForm">
             <div class="form-group">
@@ -64,14 +87,17 @@
         </form>
     </div>
     <div class="row row-centered" id="pic-results">
-        
-        <!--pics go here-->
-       
+        <!--pics append here-->
+       <div class="text-center photo-info">
+           <p class="help-block">Photo results will display here...</p>
+       </div>
     </div>
 
-
-
 </div>
+<footer>
+<!-- Button trigger modal -->
+        <a href="#" data-toggle="modal" data-target="#aboutModal"><p>Created by Tim Wright</p></a>    
+</footer>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
