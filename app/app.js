@@ -5,6 +5,8 @@ var usersolarDay;
 var maxsolarDay;
 var landedDate;
 var totalPics;
+var solDay;
+
 $(document).ready(function() {
 
     //event listener for curiosity radio button
@@ -55,11 +57,9 @@ $(document).ready(function() {
     }
 
     //append error message
-    function errorMessage(errors) {
+    function errorMessage(error) {
         $(".error-message").children().remove();
-        $(".error-message").append(
-            "<p class='bg-warning'>" + errors + "</p>"
-        );
+        $(".error-message").append("<p class='bg-warning'>" + error + "</p>");
     }
     
     //update roverChoice with current selection
@@ -102,28 +102,28 @@ $(document).ready(function() {
             updateRoverinfo();
         });
     }
-
+    //form submit events
     $("#picGetterForm").submit(function(event) {
         event.preventDefault();
         $(".feedback").children().remove();
         $("#pic-results").children().remove();
         assignCameraChoice();
         getImages(roverChoice, cameraChoice);
-        
+        solDay = $(".solar-day").val();
     });
      
 
-    //get images
-    function getImages(roverChoice, cameraChoice) {
+    //GET images
+    function getImages(roverChoice, solDay, cameraChoice) {
         var params = {
             rover: roverChoice,
-            sol: null,
+            sol: solDay,
             camera: cameraChoice,
             page: 1,  //how do I get multiple pages of results?
             api_key: 'I4dfNHxd1LPVg6P96qNQlu9cJNz50UNBIAyR2LXO'
         };
         $.ajax({
-            url: 'https://api.nasa.gov/mars-photos/api/v1/rovers/' + roverChoice + '/photos?sol=' + null + '&camera=' + cameraChoice + '&api_key=' + params.api_key
+            url: 'https://api.nasa.gov/mars-photos/api/v1/rovers/' + roverChoice + '/photos?sol=' + solDay + '&camera=' + cameraChoice + '&api_key=' + params.api_key
         }).done(function(results) {
             $.each(results.photos, function(i, photos) {
                 console.log(photos.img_src);
@@ -131,8 +131,9 @@ $(document).ready(function() {
                 "<img src=" + photos.img_src + ">"
                 );
             });
-        }).fail(function(jqXHR, errors){
-            errorMessage(errors);
+        }).fail(function(error){
+            errorMessage(error.responseJSON.errors);
+            console.log(error);
         });
         
     }
