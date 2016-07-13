@@ -13,9 +13,9 @@ $(document).ready(function() {
     $("#curiosity").click(function() {
         assignRoverChoice();
         getMaxsol(roverChoice);
-        $("#camera-choices").children().remove();
-        $("#camera-choices").attr('disabled',false);
-        $("#camera-choices").append(
+        $(".camera-choices").children().remove();
+        $(".camera-choices").attr('disabled',false);
+        $(".camera-choices").append(
             "<option value='all'>" + "All Cameras" + "</option>" +
             "<option value='fhaz'>" + "Front Hazard Avoidance Camera" + "</option>" +
             "<option value='rhaz'>" + "Rear Hazard Avoidance Camera" + "</option>" +
@@ -30,7 +30,7 @@ $(document).ready(function() {
     });
     //Adding cameras shared by both opportunity and spirit to drop-down choices
     function sharedCameras(){
-        $("#camera-choices").append(
+        $(".camera-choices").append(
             "<option value='all'>" + "All Cameras" + "</option>" +
             "<option value='fhaz'>" + "Front Hazard Avoidance Camera" + "</option>" +
             "<option value='rhaz'>" + "Rear Hazard Avoidance Camera" + "</option>" +
@@ -43,8 +43,8 @@ $(document).ready(function() {
     $("#opportunity, #spirit").click(function() {
         assignRoverChoice();
         getMaxsol(roverChoice);
-        $("#camera-choices").children().remove();
-        $("#camera-choices").attr('disabled', false);
+        $(".camera-choices").children().remove();
+        $(".camera-choices").attr('disabled', false);
         sharedCameras();
     });
 
@@ -69,7 +69,7 @@ $(document).ready(function() {
     
     //update cameraChoice with current selection
     function assignCameraChoice() {
-        cameraChoice = $("#camera-choices").val();
+        cameraChoice = $(".camera-choices").val();
     }
 
     //update usersolarDay with input
@@ -105,11 +105,12 @@ $(document).ready(function() {
     //form submit events
     $("#picGetterForm").submit(function(event) {
         event.preventDefault();
+        $(".error-message").children().remove();
+        solDay = $(".solar-day").val();
+        assignCameraChoice();
         $(".feedback").children().remove();
         $("#pic-results").children().remove();
-        assignCameraChoice();
-        getImages(roverChoice, cameraChoice);
-        solDay = $(".solar-day").val();
+        getImages(roverChoice, solDay, cameraChoice);
     });
      
 
