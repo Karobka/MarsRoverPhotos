@@ -32,7 +32,7 @@ $(document).ready(function() {
         sharedCameras();
     });
 
-    //function that has all shared functions&methods for the rovers
+    //function that has all shared functions & methods for the rovers
     function sharedMethods(){
         assignRoverChoice();
         getMaxsol(roverChoice);
@@ -90,7 +90,7 @@ $(document).ready(function() {
         });
     }
 
-    //function to get max_sol value from endpoint for selected rover
+    //function to GET max_sol value from endpoint for selected rover
     function getMaxsol (roverChoice) {
         var maxparams = {
             rover: roverChoice,
@@ -102,7 +102,7 @@ $(document).ready(function() {
             //update maxsolarDay/landedDate/totalPics with endpoint values
             maxsolarDay = dateresults.photos[0].rover.max_sol;
             landedDate = dateresults.photos[0].rover.landing_date;
-            totalPics= dateresults.photos[0].rover.total_photos;
+            totalPics = dateresults.photos[0].rover.total_photos;
             updatePlaceholder(maxsolarDay);
             updateRoverinfo();
         });
@@ -114,8 +114,8 @@ $(document).ready(function() {
         solDay = $(".solar-day").val();
         assignCameraChoice();
         $(".feedback").children().remove();
-        $("#pic-results").children().remove();
         getImages(roverChoice, solDay, cameraChoice);
+        $("#pic-results").children().remove();
         $(".photo-info").remove();
     });
      
