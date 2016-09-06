@@ -1,128 +1,139 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/lightbox.css">
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
+        crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <title>A Martian Landscape</title>
 </head>
+
 <body>
     <!-- navbar fixed to top-->
     <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar">
             <!-- This creates the three bar menu button -->
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="">A Martian Landscape</a>
+                <a class="navbar-brand" href="">A Martian Landscape</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="">About</a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="">About</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
     </nav>
-<div id="container">
-    
-    <div class="jumbotron text-center">
-        <h1 class="display-3">A Martian Landscape</h1>
-        <h2 class="lead">Pictures from the NASA Mars Rovers</h2>
-        <!-- Modal -->
-        <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">About this site</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>This was a project to practice working with an API.</p>
-                        <p>NASA has several API's you should <a href="https://api.nasa.gov/index.html">look at here.</a></p>
-                        <p>Created by Tim Wright.</p>
-                        <p><a href="mailto:mithgirw@gmail.com">Email me here.</a></p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <div id="container">
+
+        <div class="jumbotron text-center">
+            <h1 class="display-3">this is MARS</h1>
+            <h2 class="lead">Explore NASA's database of pictures from their three ROVERS</h2>
+            <!-- Modal -->
+            <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">About this site</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>This was a project to practice working with an API.</p>
+                            <p>NASA has several API's you should <a href="https://api.nasa.gov/index.html">look at here.</a></p>
+                            <p>Created by Tim Wright.</p>
+                            <p><a href="mailto:mithgirw@gmail.com">Email me here.</a></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-        
 
-    <!-- NASA logos -->
-    <div class="row">
-        <form class="text-center col-md-8 col-md-offset-2" id="picGetterForm">
-            <div class="form-group">
-                <div class="row">
-                    <!--<div class="col-md-12">
+
+        <!-- NASA logos -->
+        <div class="row">
+            <form class="text-center col-md-8 col-md-offset-2" id="picGetterForm">
+                <div class="form-group">
+                    <div class="row">
+                        <!--<div class="col-md-12">
                         <img class="img-rounded" src="images/Nasa_logo.png" alt="Thumbnail image">
                         <img class="img-rounded" src="images/Nasa_mer_daffy.png" alt="Thumbnail image">
                         <img class="img-rounded" src="images/Nasa_mer_marvin.png" alt="Thumbnail image">
                     </div>-->
-                    &nbsp;
-                    <h3><u>First select a rover</u>:</h3>
-                    <label class="radio-inline">
+                        &nbsp;
+                        <h3>
+                            <u>First select a rover</u>:</h3>
+                        <label class="radio-inline">
                         <input type="radio" name="inlineRadioOptions" id="curiosity" value="curiosity">Curiosity
                     </label>
-                    <label class="radio-inline">
+                        <label class="radio-inline">
                         <input type="radio" name="inlineRadioOptions" id="opportunity" value="opportunity">Opportunity
                     </label>
-                    <label class="radio-inline">
+                        <label class="radio-inline">
                         <input type="radio" name="inlineRadioOptions" id="spirit" value="spirit">Spirit
                     </label>
-                </div>
-                <div class="row text-center">
-                    <div class="col-md-4 col-md-offset-1">
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-md-4 col-md-offset-1">
                             <label class="help-block">Select a camera view:</label>
                             <select class="form-control camera-choices" disabled>
                                 <!--jQuery appends in the choices-->
                             </select>
                             <span class="help-block">Tip: Select "All Cameras" to get the best results</span>
-                    </div>
-                    <div class="col-md-4 col-md-offset-2">
+                        </div>
+                        <div class="col-md-4 col-md-offset-2">
                             <label class="help-block">Enter a Martian Solar Day:</label>
                             <input class="form-control solar-day" type="number" min="0" step="1" placeholder="" required disabled></input>
                             <span class="help-block">Tip: 0 (zero) was the day it landed on Mars but it hasn't taken pictures everyday so keep trying other days if you get no results</span>
-                    </div>
-                    <div class="rover-info col-md-8 col-md-offset-2">
-                        <!-- append info here -->
-                    </div>
-                    <div class="error-message col-md-4 col-md-offset-4">
-                        <!-- append error here -->
+                        </div>
+                        <div class="rover-info col-md-8 col-md-offset-2">
+                            <!-- append info here -->
+                        </div>
+                        <div class="error-message col-md-4 col-md-offset-4">
+                            <!-- append error here -->
+                        </div>
                     </div>
                 </div>
+                <button type="submit" class="btn btn-primary submitbtn" value="Submit" disabled>Get Pictures</button>
+            </form>
+        </div>
+        <div class="row row-centered" id="pic-results">
+            <!--pics append here-->
+            <div class="text-center photo-info">
+                <p class="help-block">Photo results will display here...</p>
             </div>
-            <button type="submit" class="btn btn-primary submitbtn" value="Submit" disabled>Get Pictures</button>
-        </form>
-    </div>
-    <div class="row row-centered" id="pic-results">
-        <!--pics append here-->
-       <div class="text-center photo-info">
-           <p class="help-block">Photo results will display here...</p>
-       </div>
-    </div>
+        </div>
 
-</div>
-<footer>
-<!-- Button trigger modal -->
-        <a href="#" data-toggle="modal" data-target="#aboutModal"><p>Created by Tim Wright</p></a>    
-</footer>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://code.jquery.com/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-<script src="app/app.js"></script>
-<script src="app/lightbox.js"></script>
+    </div>
+    <footer class="plain_footer">
+        <!-- Button trigger modal -->
+        <a href="#" data-toggle="modal" data-target="#aboutModal">
+            <p>Created by Tim Wright</p>
+        </a>
+    </footer>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
+    <script src="app/app.js"></script>
+    <script src="app/lightbox.js"></script>
 </body>
+
 </html>
