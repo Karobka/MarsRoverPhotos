@@ -13,7 +13,28 @@
     <title>A Martian Landscape</title>
 </head>
 <body>
+    <!-- navbar fixed to top-->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <!-- This creates the three bar menu button -->
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="">A Martian Landscape</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
 <div id="container">
+    
     <div class="jumbotron text-center">
         <h1 class="display-3">A Martian Landscape</h1>
         <h2 class="lead">Pictures from the NASA Mars Rovers</h2>
@@ -45,11 +66,11 @@
         <form class="text-center col-md-8 col-md-offset-2" id="picGetterForm">
             <div class="form-group">
                 <div class="row">
-                    <div class="col-md-12">
+                    <!--<div class="col-md-12">
                         <img class="img-rounded" src="images/Nasa_logo.png" alt="Thumbnail image">
                         <img class="img-rounded" src="images/Nasa_mer_daffy.png" alt="Thumbnail image">
                         <img class="img-rounded" src="images/Nasa_mer_marvin.png" alt="Thumbnail image">
-                    </div>
+                    </div>-->
                     &nbsp;
                     <h3><u>First select a rover</u>:</h3>
                     <label class="radio-inline">
