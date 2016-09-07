@@ -28,6 +28,7 @@
 #picGetterForm {
     border: 1px solid #533b27;
     border-radius: 4px 4px 0 0;
+    padding-bottom: 20px;
 }
 
 #pic-results {
@@ -66,4 +67,8 @@ footer {
 }
 .modal-content {
     color: #777;
+}
+
+body {
+    background-color: #f5f5f5;
 }
