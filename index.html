@@ -9,9 +9,7 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
         crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
-        crossorigin="anonymous">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <title>A Martian Landscape</title>
 </head>
@@ -42,8 +40,8 @@
     <div id="container">
 
         <div class="jumbotron text-center">
-            <h1 class="display-3">this is MARS</h1>
-            <h2 class="lead">Explore NASA's database of pictures from their three ROVERS</h2>
+            <h1 class="display-3">A Martian Landscape</h1>
+            <h2 class="lead">Explore NASA's database of pictures from their three Mars Rovers</h2>
             <!-- Modal -->
             <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog">
                 <div class="modal-dialog">
@@ -111,7 +109,10 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary submitbtn" value="Submit" disabled>Get Pictures</button>
+                <button type="submit" class="btn_new_styles btn btn-primary submitbtn" value="Submit" disabled>
+                    <i class="fa fa-picture-o fa-1x" aria-hidden="true"></i>
+                    Get Pictures
+                    </button>
             </form>
         </div>
         <div class="row row-centered" id="pic-results">
@@ -124,7 +125,7 @@
     </div>
     <footer class="plain_footer">
         <span>
-            Created by Tim Wright using 
+            Created by Tim Wright using: 
             <a href="https://getbootstrap.com"><img class="img_boot" src="images/Bootstrap_s.png" alt="" /></a>
         </span>
     </footer>

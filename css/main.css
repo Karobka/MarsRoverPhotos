@@ -12,6 +12,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 35em;
+    color: #eee;
 }
 .jumbotron a {
     color: black;
@@ -20,19 +21,25 @@
     text-align: center;
 }
 .col-centered {
-    display: inline-block;
     float: none;
+    display: inline-block;
+}
+
+#picGetterForm {
+    border: 1px solid #533b27;
+    border-radius: 4px 4px 0 0;
 }
 
 #pic-results {
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #533b27;
     margin-top: 25px;
     padding-top: 25px;
+    background-color: #cecece;
 }
 footer {
     background-color: #f9f9f9;
     text-align: center;
-    border-top: 1px solid #bfbfbf;
+    border-top: 1px solid #533b27;
     /** position: fixed; **/
     bottom: 0;
     width: 100%;
@@ -52,4 +59,8 @@ footer {
 .img_boot {
     width: 4%;
     padding: 15px 15px;
+}
+
+.btn_new_styles {
+    background-color: pink;
 }
