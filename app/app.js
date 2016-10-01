@@ -39,7 +39,7 @@ function updateRoverinfo() {
 //append error message
 function errorMessage(error) {
     $(".error-message").children().remove();
-    $(".error-message").append("<p class='bg-warning'>" + error + "</p>");
+    $(".error-message").append("<p class='bg-warning'>" + error + ". Please try a different Solar Day</p>");
 }
 
 //update roverChoice with current selection
@@ -127,10 +127,12 @@ function getImages(roverChoice, solDay, cameraChoice) {
 }
 
 $(document).ready(function () {
+    $(".start_wrap").css("display", "inline-block");
     $(".btn_start").on("click", function () {
-        $(".start_wrap").hide();
-        $("#picGetterForm").css("display", "block");
-    })
+        $(".start_wrap").css("display", "none");
+        $("#picGetterForm").css("display", "inline-block");
+        
+    });
 
     //event listener for curiosity radio button
     $("#curiosity").click(function () {
@@ -154,8 +156,7 @@ $(document).ready(function () {
         sharedMethods();
         sharedCameras();
     });
-
-
+    
     //form submit events
     $("#picGetterForm").submit(function (event) {
         event.preventDefault();
@@ -166,6 +167,7 @@ $(document).ready(function () {
         getImages(roverChoice, solDay, cameraChoice);
         $("#pic-results").children().remove();
         $(".photo-info").remove();
+        $(".fa-angle-down").css("display", "block");
     });
 
 

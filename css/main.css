@@ -8,14 +8,18 @@
     margin-right: 10px;
 }
 .jumbotron {
-    background-image: url("../images/OpportunityMars.jpg");
-    background-repeat: no-repeat;
+    background-image: url("../images/galecrater.png");
     background-size: cover;
-    height: 35em;
     color: #eee;
+}
+form {
+    background-color: transparent;
 }
 .jumbotron a {
     color: black;
+}
+.start_wrap {
+    display: none;
 }
 .row-centered {
     text-align: center;
@@ -29,6 +33,7 @@
     /*border: 1px solid #533b27;*/
     border-radius: 4px 4px 0 0;
     padding-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 #pic-results {
@@ -90,6 +95,12 @@ body {
 }
 .instruct_header {
     margin: 50px;
+}
+.bg-warning {
+    color: black;
+}
+.fa-angle-down {
+    display: none;
 }
 #picGetterForm {
     display: none;
