@@ -94,6 +94,9 @@ body {
 .fa-angle-down {
     display: none;
 }
+.row_radios {
+    margin-bottom: 25px;
+}
 #picGetterForm {
     display: none;
 }
