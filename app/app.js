@@ -63,6 +63,11 @@ function updatePlaceholder(maxsolarDay) {
         placeholder: 'Enter number from 0 to ' + maxsolarDay,
         disabled: false
     });
+    $(".help_block_days").html("");
+    $(".help_block_days").html(
+        "Enter from 0 to " + maxsolarDay + "<br>" +
+        "Tip: 0 (zero) was the day it landed on Mars, 1 was its first day on Mars, 2 was its second day, and so on.  It hasn't taken pictures everyday so keep trying other days if you get no results."
+        );
 }
 
 //function to GET max_sol value from endpoint for selected rover
@@ -88,7 +93,7 @@ function getImages(roverChoice, solDay, cameraChoice) {
         rover: roverChoice,
         sol: solDay,
         camera: cameraChoice,
-        page: 1,  //how do I get multiple pages of results?
+        page: 1,
         api_key: 'I4dfNHxd1LPVg6P96qNQlu9cJNz50UNBIAyR2LXO'
     };
     //if statement to remove camera choice from url if 'all' cameras is selected
@@ -131,7 +136,6 @@ $(document).ready(function () {
     $(".btn_start").on("click", function () {
         $(".start_wrap").css("display", "none");
         $("#picGetterForm").css("display", "inline-block");
-        
     });
 
     //event listener for curiosity radio button
