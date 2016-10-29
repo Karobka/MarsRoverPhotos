@@ -116,4 +116,12 @@ body {
     .img-rounded {
         width: 40%;
     }
+    .form-control {
+    border-radius: 0px;
+    width: 60%;
+    margin: 0 auto;
+    }
+    .radio-inline {
+        display: block;
+    }
 }
