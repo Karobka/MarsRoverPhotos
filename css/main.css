@@ -11,6 +11,7 @@
     background-image: url("../images/galecrater.png");
     background-size: cover;
     color: #eee;
+    height: 600px;
 }
 form {
     background-color: transparent;
@@ -28,15 +29,11 @@ h2 {
     float: none;
     display: inline-block;
 }
-.vert_center {
-    display: inline-block;
-    vertical-align: middle;
-    float: none;
+.nasa_logo {
+    margin-top: 50px;
 }
 #picGetterForm {
     padding-bottom: 20px;
-    margin-top: 50px;
-    display: none;
 }
 #pic-results {
     margin-top: 25px;
@@ -70,9 +67,11 @@ body {
 }
 .start_wrap {
     margin-top: 25px;
+    width: 42%;
 }
 .help-block {
     color: #eee;
+    font-size: x-large;
 }
 .navbar-brand {
     font-size: 33px;
@@ -98,6 +97,7 @@ body {
 }
 .radio-inline {
     font-size: 25px;
+    font-family: 'Playfair Display', serif;
 }
 .row_radios {
     margin-bottom: 25px;
@@ -107,6 +107,7 @@ body {
 }
 .btn {
     border-radius: 0px;
+    font-family: 'Playfair Display', serif;
 }
 @media screen and (max-width: 420px) {
     .navbar-brand {

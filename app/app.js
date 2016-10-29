@@ -133,10 +133,6 @@ function getImages(roverChoice, solDay, cameraChoice) {
 
 $(document).ready(function () {
     $(".start_wrap").css("display", "inline-block");
-    $(".explore_btn").on("click", function() {
-        $(".start_wrap").css("display", "none");
-        $("#picGetterForm").css("display", "block");
-    });
     //event listener for curiosity radio button
     $("#curiosity").click(function () {
         sharedMethods();
