@@ -1,6 +1,6 @@
 "use strict";
 var roverChoice;
-var cameraChoice;
+var cameraChoice = "all";
 var usersolarDay;
 var maxsolarDay;
 var landedDate;
@@ -17,7 +17,7 @@ function sharedMethods() {
 }
 
 //function that adds cameras shared by both Opportunity and Spirit to drop-down choices
-function sharedCameras() {
+/*function sharedCameras() {
     $(".camera-choices").append(
         "<option value='all'>" + "All Cameras" + "</option>" +
         "<option value='fhaz'>" + "Front Hazard Avoidance Camera" + "</option>" +
@@ -26,7 +26,7 @@ function sharedCameras() {
         "<option value='pancam'>" + "Panoramic Camera" + "</option>" +
         "<option value='minites'>" + "Miniature Thermal Emission Spectrometer" + "</option>"
     )
-};
+};*/
 
 //remove existing info then add info to rover-info div
 function updateRoverinfo() {
@@ -48,9 +48,9 @@ function assignRoverChoice() {
 }
 
 //update cameraChoice with current selection
-function assignCameraChoice() {
+/*function assignCameraChoice() {
     cameraChoice = $(".camera-choices").val();
-}
+}*/
 
 //update usersolarDay with input
 function updateusersolarDay() {
@@ -133,15 +133,14 @@ function getImages(roverChoice, solDay, cameraChoice) {
 
 $(document).ready(function () {
     $(".start_wrap").css("display", "inline-block");
-    $(".btn_start").on("click", function () {
+    $(".explore_btn").on("click", function() {
         $(".start_wrap").css("display", "none");
-        $("#picGetterForm").css("display", "inline-block");
+        $("#picGetterForm").css("display", "block");
     });
-
     //event listener for curiosity radio button
     $("#curiosity").click(function () {
         sharedMethods();
-        $(".camera-choices").append(
+        /*$(".camera-choices").append(
             "<option value='all'>" + "All Cameras" + "</option>" +
             "<option value='fhaz'>" + "Front Hazard Avoidance Camera" + "</option>" +
             "<option value='rhaz'>" + "Rear Hazard Avoidance Camera" + "</option>" +
@@ -152,21 +151,21 @@ $(document).ready(function () {
             "<option value='navcam'>" + "Navigation Camera" + "</option>" +
             "<option value='pancam'>" + "Panoramic Camera" + "</option>" +
             "<option value='minites'>" + "Miniature Thermal Emission Spectrometer" + "</option>"
-        )
+        )*/
     });
 
     //event listener for clicking opportunity and spirit radio buttons
     $("#opportunity, #spirit").click(function () {
         sharedMethods();
-        sharedCameras();
+        //sharedCameras();
     });
-    
+
     //form submit events
     $("#picGetterForm").submit(function (event) {
         event.preventDefault();
         $(".error-message").children().remove();
         solDay = $(".solar-day").val();
-        assignCameraChoice();
+        //assignCameraChoice();
         $(".feedback").children().remove();
         getImages(roverChoice, solDay, cameraChoice);
         $("#pic-results").children().remove();

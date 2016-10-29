@@ -2,143 +2,149 @@
 <html lang="en-US">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/lightbox.css">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <title>A Martian Landscape</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/lightbox.css">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display|Roboto+Condensed|Space+Mono" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<title>A Martian Landscape</title>
 </head>
 
 <body>
-    <!-- navbar fixed to top-->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-                    aria-controls="navbar">
+	<!-- navbar fixed to top-->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
             <!-- This creates the three bar menu button -->
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-                <a class="navbar-brand" href="https://karobka.github.io/MarsRoverPhotos/">A Martian Landscape</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#" data-toggle="modal" data-target="#aboutModal">About</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div id="container">
+				<a class="navbar-brand" href="https://karobka.github.io/MarsRoverPhotos/">A Martian Landscape</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#" data-toggle="modal" data-target="#aboutModal">About</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div id="container">
 
-        <div class="jumbotron text-center">
-            
-            <!-- Modal -->
-            <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title">About this site</h4>
-                        </div>
-                        <div class="modal-body">
-                            <p>I love pictures from space. So when I was learning to work with API's and I found that NASA had
-                                all their rover photos from Mars available it was a perfect fit. I also used it as an opportunity
-                                to learn Bootstrap and utilize Lokesh Dhakar's Lightbox.</p>
-                            <p>Created by Tim Wright</p>
-                            <p><a href="https://www.linkedin.com/in/tim-wright">Get in touch with me on LinkedIn.</a></p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="start_wrap">
-                <h2 class="lead">Explore NASA's pictures from Mars</h2>
-                <div class="nasa_logos col-md-12">
-                            <img class="img-rounded img-responsive" src="images/Nasa_logo.png" alt="Thumbnail image">
-                            <img class="img-rounded img-responsive" src="images/Nasa_mer_daffy.png" alt="Thumbnail image">
-                            <img class="img-rounded img-responsive" src="images/Nasa_mer_marvin.png" alt="Thumbnail image">
-                        </div>
-                <p>
-                    <button type="button" class="btn_start btn btn-primary btn-lg">Get Started</button>
-                </p>
-            </div>
-            <div class="row">
-                <form class="text-center col-md-8 col-md-offset-2" id="picGetterForm">
-                    <div class="form-group">
-                        <div class="row row_radios">
-                            <h3 class="instruct_header">FIRST SELECT A ROVER:</h3>
-                            <label class="radio-inline">
-                                <input type="radio" name="inlineRadioOptions" id="curiosity" value="curiosity">Curiosity
+		<div class="jumbotron text-center">
+
+			<!-- Modal -->
+			<div class="modal fade" id="aboutModal" tabindex="-1" role="dialog">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title">About this site</h4>
+						</div>
+						<div class="modal-body">
+							<p>I love pictures from space. So when I was learning to work with API's and I found that NASA had all their rover photos
+								from Mars available it was a perfect fit. I also used it as an opportunity to learn Bootstrap and utilize Lokesh
+								Dhakar's Lightbox.</p>
+							<p>Created by Tim Wright</p>
+							<p><a href="https://www.linkedin.com/in/tim-wright">Get in touch with me on LinkedIn.</a></p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="start_wrap">
+
+				<div class="nasa_logos col-md-6 vert_center">
+					<img class="img-rounded img-responsive" src="images/Nasa_logo.png" alt="Thumbnail image">
+					<button type="" class="btn btn-primary explore_btn btn-lg" value="Submit">
+                        Get Pictures
+                    </button>
+					<!--<img class="img-rounded img-responsive" src="images/Nasa_mer_daffy.png" alt="Thumbnail image">
+                    <img class="img-rounded img-responsive" src="images/Nasa_mer_marvin.png" alt="Thumbnail image">-->
+				</div>
+                <!--<div class="col-md-6 vert_center">
+                    <h2 class="">Explore <span class="nasa_words">NASA's</span> pictures from MARS</h2>
+                </div>-->
+			</div>
+			<div class="row">
+				<form class="text-center col-md-8 col-md-offset-2" id="picGetterForm">
+					<div class="form-group">
+						<div class="row row_radios">
+							<h3 class="instruct_header">FIRST SELECT A ROVER:</h3>
+							<label class="radio-inline">
+                                <input type="radio" name="inlineRadioOptions" id="curiosity" value="curiosity">
+								Curiosity
                             </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="inlineRadioOptions" id="opportunity" value="opportunity">Opportunity
+							<label class="radio-inline">
+                                <input type="radio" name="inlineRadioOptions" id="opportunity" value="opportunity">
+								Opportunity
                             </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="inlineRadioOptions" id="spirit" value="spirit">Spirit
+							<label class="radio-inline">
+                                <input type="radio" name="inlineRadioOptions" id="spirit" value="spirit">
+								Spirit
                             </label>
-                        </div>
-                        <div class="row text-center">
-                            <div class="col-md-4 col-md-offset-1">
-                                <label class="help-block">Select a camera view:</label>
-                                <select class="form-control camera-choices" disabled>
-                                    <!--jQuery appends in the choices-->
+						</div>
+						<div class="row text-center">
+							<!--<div class="col-md-4 col-md-offset-1">
+								<label class="help-block">Select a camera view:</label>
+								<select class="form-control camera-choices" disabled>
                                 </select>
-                                <span class="help-block">Tip: Select "All Cameras" to get the best results</span>
-                            </div>
-                            <div class="col-md-4 col-md-offset-2">
-                                <label class="help-block">Enter a Martian Solar Day:</label>
-                                <input class="form-control solar-day" type="number" min="0" step="1" placeholder="" required disabled>
-                                <span class="help-block help_block_days"> Tip: 0 (zero) was the day it landed on Mars, 1 was its first day on Mars, 2 was its second day, and so on. 
+								<span class="help-block">Tip: Select "All Cameras" to get the best results</span>
+							</div>-->
+							<div class="col-md-4 col-md-offset-4">
+								<label class="help-block">Enter a Martian Solar Day:</label>
+								<input class="form-control solar-day" type="number" min="0" step="1" placeholder="" required disabled>
+								<!--<span class="help-block help_block_days"> Tip: 0 (zero) was the day it landed on Mars, 1 was its first day on Mars, 2 was its second day, and so on. 
                                     It hasn't taken pictures everyday so keep trying other days if you get no results.
-                                </span>
-                            </div>
+                                </span>-->
+							</div>
 
-                        </div>
-                        <div class="rover-info">
-                            <!-- append info here -->
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary submitbtn btn-lg" value="Submit" disabled>
+						</div>
+						<div class="rover-info">
+							<!-- append info here -->
+						</div>
+					</div>
+					<button type="submit" class="btn btn-primary submitbtn btn-lg" value="Submit" disabled>
                         <i class="fa fa-picture-o fa-1x" aria-hidden="true"></i>
                         Get Pictures
                     </button>
-                    <i class="fa fa-angle-down fa-3x" aria-hidden="true"></i>
-                </form>
-            </div>
-        </div>
+					<i class="fa fa-angle-down fa-3x" aria-hidden="true"></i>
+				</form>
+			</div>
+		</div>
 
-        <div class="row">
-            <div class="error-message col-md-4 col-md-offset-4">
-                <!-- append error here -->
-            </div>
-        </div>
-        <div class="row row-centered" id="pic-results">
-            <!--pics append here-->
-            <div class="text-center photo-info">
-                <p class="help-block">Photo results will display here...</p>
-            </div>
-        </div>
+		<div class="row">
+			<div class="error-message col-md-4 col-md-offset-4">
+				<!-- append error here -->
+			</div>
+		</div>
+		<div class="row row-centered" id="pic-results">
+			<!--pics append here-->
+			<div class="text-center photo-info">
+				<p class="help-block">Photo results will display here...</p>
+			</div>
+		</div>
 
-    </div>
-    <footer>
-        <span>
+	</div>
+	<footer>
+		<span>
             Created by Tim Wright using: 
             <a href="http://getbootstrap.com"><img class="img_boot" src="images/Bootstrap_s.png" alt="" /></a>
         </span>
-    </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="app/app.js"></script>
-    <script src="app/lightbox.js"></script>
+	</footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="app/app.js"></script>
+	<script src="app/lightbox.js"></script>
 </body>
 
 </html>

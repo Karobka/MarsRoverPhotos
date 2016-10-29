@@ -18,28 +18,30 @@ form {
 .jumbotron a {
     color: black;
 }
-.start_wrap {
-    display: none;
-}
 .row-centered {
     text-align: center;
+}
+h2 {
+    font-family: 'Roboto Condensed', sans-serif;
 }
 .col-centered {
     float: none;
     display: inline-block;
 }
-
+.vert_center {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
 #picGetterForm {
     padding-bottom: 20px;
-    background-color: rgba(81, 72, 54, 0.5);
     margin-top: 50px;
+    display: none;
 }
-
 #pic-results {
-    border-top: 1px solid #533b27;
     margin-top: 25px;
     padding-top: 25px;
-    background-color: #cecece;
+    background-color: #fff;
 }
 footer {
     background-color: #f9f9f9;
@@ -66,11 +68,16 @@ footer {
 body {
     background-color: #f5f5f5;
 }
+.start_wrap {
+    margin-top: 25px;
+}
 .help-block {
     color: #eee;
 }
 .navbar-brand {
     font-size: 33px;
+    font-family: 'Playfair Display', serif;
+    color: #5a5752;
 }
 .bg-info {
     background-color: none;
@@ -78,15 +85,10 @@ body {
 .jumbotron p {
     font-size: 17px;
 }
-.nasa_logos {
-    margin-top: 25px;
-    margin-bottom: 50px;
-}
 .img-rounded {
     display: inline-block;
 }
 .instruct_header {
-    margin: 50px;
 }
 .bg-warning {
     color: black;
@@ -94,11 +96,17 @@ body {
 .fa-angle-down {
     display: none;
 }
+.radio-inline {
+    font-size: 25px;
+}
 .row_radios {
     margin-bottom: 25px;
 }
-#picGetterForm {
-    display: none;
+.form-control {
+    border-radius: 0px;
+}
+.btn {
+    border-radius: 0px;
 }
 @media screen and (max-width: 420px) {
     .navbar-brand {
