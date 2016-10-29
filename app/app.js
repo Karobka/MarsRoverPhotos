@@ -166,7 +166,6 @@ $(document).ready(function () {
         getImages(roverChoice, solDay, cameraChoice);
         $("#pic-results").children().remove();
         $(".photo-info").remove();
-        $(".fa-angle-down").css("display", "block");
     });
 
 
