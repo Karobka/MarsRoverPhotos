@@ -109,7 +109,7 @@ body {
     border-radius: 0px;
     font-family: 'Playfair Display', serif;
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 680px) {
     .navbar-brand {
         font-size: 30px;
     }
