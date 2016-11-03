@@ -109,6 +109,9 @@ body {
     border-radius: 0px;
     font-family: 'Playfair Display', serif;
 }
+.error-message {
+    text-align: center;
+}
 @media screen and (max-width: 680px) {
     .navbar-brand {
         font-size: 30px;

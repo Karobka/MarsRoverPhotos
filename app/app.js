@@ -39,7 +39,7 @@ function updateRoverinfo() {
 //append error message
 function errorMessage(error) {
     $(".error-message").children().remove();
-    $(".error-message").append("<p class='bg-warning'>" + error + ". Please try a different Solar Day</p>");
+    $(".error-message").append("<p class='bg-warning'>" + error + ". Please try a different Martian Day</p>");
 }
 
 //update roverChoice with current selection
